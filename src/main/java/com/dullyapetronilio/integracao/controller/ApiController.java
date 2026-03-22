@@ -1,5 +1,8 @@
 package com.dullyapetronilio.integracao.controller;
 
+import dto.MensagemResponse;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -8,13 +11,25 @@ import org.springframework.web.bind.annotation.*;
 public class ApiController {
 
     @GetMapping("/mensagem")
-    public String getMensagem() {
-        return  "Dados do Back-End Spring Boot";
+    public ResponseEntity<MensagemResponse> getMensagem(){
+
+        MensagemResponse response =
+                new MensagemResponse("Dados do Back-End Spring Boot", "Dullya");
+
+        return ResponseEntity.ok(response); // padrão REST
     }
 
     @PostMapping("/dados")
-    public String postMethodName(@RequestBody String dados){
-        return "Recebido:" + dados;
+    public ResponseEntity<MensagemResponse> receberDados(@RequestBody String dados){
+
+        if (dados == null || dados.isBlank()){
+            return ResponseEntity.badRequest().build();
+        }
+
+        MensagemResponse response =
+                new MensagemResponse("Recebido: " + dados, "API");
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
 

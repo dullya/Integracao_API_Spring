@@ -3,32 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integração com Spring Boot</title>
+    <title>Integração Spring Boot</title>
 
-    <!-- CSS -->>
+    <!-- CSS -->
 
     <Style>
 
         body{
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 20px;
+            font-family: Arial, sans-serif;
+            background:  #f4f6f9;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
         }
 
         .container{
-            max-width: 600px;
-            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        button, input{
+        button{
+            background:  #1976d2;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover{
+            background-color:  #125aa3;
+        }
+
+        input{
+            width: 100%;
             padding: 8px;
-            margin: 5px 0;
+            margin-top: 10px;
         }
 
         .result-box{
-            margin: 5px 0;
+            margin-top: 15px;
             padding: 10px;
-            border:  1px solid #ddd;
-            min-height: 20px;
+            background: #eef2f7;
+            border-radius:  5px;
+
         }
 
     </Style>
@@ -36,7 +62,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Integração - Front-end e Back-end</h1>
+        <h1>Integração API </h1>
 
         <!-- GET -->
         <button onclick="buscarMensagem()"> Buscar Mensagem </button>
