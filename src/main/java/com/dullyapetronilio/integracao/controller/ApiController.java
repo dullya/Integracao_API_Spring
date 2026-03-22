@@ -1,6 +1,6 @@
 package com.dullyapetronilio.integracao.controller;
 
-import dto.MensagemResponse;
+import com.dullyapetronilio.integracao.dto.MensagemResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

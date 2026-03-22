@@ -1,4 +1,4 @@
-package dto;
+package com.dullyapetronilio.integracao.dto;
 
 public class MensagemResponse {
 
